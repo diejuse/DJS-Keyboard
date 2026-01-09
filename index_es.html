@@ -2,222 +2,376 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>𝔻𝕁𝕊 🄺eyboard — Teclado flotante estilo PC</title>
+  <title>𝔻𝕁𝕊 🄺eyboard — Teclado estilo PC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
-    body {
+    :root{
+      --bg:#070b10;
+      --panel:#0b1120;
+      --border:#1f2937;
+      --text:#f3f4f6;
+      --muted:#9ca3af;
+      --muted2:#6b7280;
+
+      /* Colores pilares */
+      --p1:#34d399; /* productividad */
+      --p2:#f9a8d4; /* diversión */
+      --p3:#60a5fa; /* privacidad */
+      --p4:#fbbf24; /* libertad */
+    }
+
+    body{
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #070b10;
-      color: #f3f4f6;
-      line-height: 1.6;
+      margin:0; padding:0;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
     }
-    .wrap {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 24px 16px 40px;
+    .wrap{
+      max-width:920px;
+      margin:0 auto;
+      padding:24px 16px 56px;
     }
-    h1, h2, h3 {
-      font-weight: 600;
-      color: #e5e7eb;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 0.25rem;
-    }
-    h2 {
-      font-size: 1.4rem;
-      margin-top: 1.8rem;
-    }
-    h3 {
-      font-size: 1.05rem;
-      margin-top: 1rem;
-    }
-    p { margin: 0.4rem 0; }
-    ul { margin: 0.4rem 0 0.4rem 1.2rem; padding: 0; }
 
-    .tagline { color: #9ca3af; margin-bottom: 1.2rem; }
+    h1,h2,h3{
+      font-weight:650;
+      color:#e5e7eb;
+      letter-spacing:.2px;
+      margin:0 0 .5rem;
+    }
+    h1{ font-size:2rem; margin-bottom:.2rem; }
+    h2{ font-size:1.35rem; margin-top:0; }
+    h3{ font-size:1.05rem; margin-top:1rem; }
 
-    .badge {
-      display: inline-block;
-      font-size: 0.75rem;
-      padding: 2px 8px;
+    p{ margin:.35rem 0; }
+
+    .tagline{
+      color:var(--muted);
+      margin:0 0 1.1rem;
+    }
+
+    .flags{
+      text-align:right;
+      margin-bottom:18px;
+    }
+    .flags img{
+      width:28px; height:20px;
+      margin-left:8px;
+      border-radius:3px;
+      border:1px solid #374151;
+      opacity:.95;
+      cursor:pointer;
+    }
+
+    .section{
+      background:var(--panel);
+      border-radius:14px;
+      border:1px solid var(--border);
+      padding:16px 16px 14px;
+      margin-top:16px;
+    }
+
+    /* Índice clásico, estrecho */
+    .toc{
+      display:inline-block;
+      width: fit-content;
+      max-width: 100%;
+      background: rgba(17,24,39,.35);
+      border:1px solid #243244;
+      border-radius:12px;
+      padding:12px 14px 10px;
+      margin-top:12px;
+    }
+    .toc h2{
+      font-size:1.05rem;
+      margin:0 0 .35rem;
+    }
+    .toc ol{
+      margin:.25rem 0 0 1.15rem;
+      padding:0;
+    }
+    .toc li{ margin:.2rem 0; }
+    .toc a{
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px dashed #334155;
+    }
+    .toc a:hover{
+      border-bottom-color: #94a3b8;
+    }
+
+    /* Pilares */
+    .pillar{
+      border:1px solid #243244;
+      background:rgba(17,24,39,.35);
+      border-radius:12px;
+      padding:12px 12px 10px;
+      margin-top:12px;
+      position:relative;
+      overflow:hidden;
+    }
+    .pillar::before{
+      content:"";
+      position:absolute;
+      left:0; top:0; bottom:0;
+      width:4px;
+      opacity:.95;
+    }
+    .pillar.p1::before{ background:var(--p1); }
+    .pillar.p2::before{ background:var(--p2); }
+    .pillar.p3::before{ background:var(--p3); }
+    .pillar.p4::before{ background:var(--p4); }
+
+    .pillar h3{
+      margin:0 0 .35rem;
+      font-size:1.05rem;
+    }
+
+    /* Subline “Por los siguientes motivos” / “Gracias…” */
+    .subline{
+      display:inline-block;
+      font-size:.92rem;
+      color: var(--muted);
+      border: 1px solid #374151;
+      background: rgba(17,24,39,.45);
+      padding: 4px 10px;
       border-radius: 999px;
-      background: #111827;
-      border: 1px solid #374151;
-      color: #9ca3af;
-      margin-right: 0.35rem;
-      margin-bottom: 0.35rem;
+      margin: .15rem 0 .8rem;
     }
 
-    .section {
-      background: #0b1120;
-      border-radius: 12px;
-      border: 1px solid #1f2937;
-      padding: 14px 14px 12px;
-      margin-top: 1rem;
+    /* Listas bonitas (sin bullets unicode) */
+    .nice{ margin: .25rem 0 0; padding:0; }
+    .nice li{ list-style:none; margin:.25rem 0; }
+
+    .mark{ display:inline-block; width: 2.0rem; }
+    .submark{ display:inline-block; width: 2.0rem; color: var(--muted); }
+
+    /* Colores para marcadores por pilar (emoji color) */
+    .m-p1{ color: var(--p1); } /* productividad */
+    .m-p2{ color: var(--p2); } /* diversión */
+    .m-p3{ color: var(--p3); } /* privacidad */
+    .m-p4{ color: var(--p4); } /* libertad */
+
+    /* Placeholder de enlaces */
+    .linkph{
+      display:inline-block;
+      font-size:.78rem;
+      color:var(--muted);
+      border:1px solid #374151;
+      background:rgba(17,24,39,.45);
+      padding:2px 8px;
+      border-radius:999px;
+      white-space:nowrap;
     }
 
-    .highlight { color: #a5b4fc; font-weight: 500; }
-
-    .flags {
-      text-align: right;
-      margin-bottom: 20px;
-    }
-    .flags img {
-      width: 28px;
-      height: 20px;
-      cursor: pointer;
-      margin-left: 8px;
-      border-radius: 3px;
-      border: 1px solid #374151;
+    .footnote{
+      font-size:.82rem;
+      color:var(--muted2);
+      margin-top:18px;
+      border-top:1px solid var(--border);
+      padding-top:12px;
     }
 
-    .footnote {
-      font-size: 0.8rem;
-      color: #6b7280;
-      margin-top: 2rem;
-      border-top: 1px solid #1f2937;
-      padding-top: 0.8rem;
-    }
+    /* Scroll a secciones con margen superior agradable */
+    #dirigido, #descripcion, #videos, #privacidad { scroll-margin-top: 18px; }
   </style>
 </head>
 
 <body>
   <div class="wrap">
 
-    <!-- Banderas de idioma -->
     <div class="flags">
       <a href="index.html"><img src="https://flagcdn.com/us.svg" alt="English"></a>
       <a href="index_es.html"><img src="https://flagcdn.com/es.svg" alt="Español"></a>
     </div>
 
     <h1>𝔻𝕁𝕊 🄺eyboard</h1>
-    <p class="tagline">Teclado estilo PC con modo flotante, modo burbuja y herramientas únicas.</p>
+    <p class="tagline">Teclado virtual para Android totalmente privado, de estilo PC, con modo flotante y persistencia.</p>
 
-    <div>
-      <span class="badge">Teclado estilo PC</span>
-      <span class="badge">Modos flotante y burbuja</span>
-      <span class="badge">Offline y privado</span>
-      <span class="badge">Latino · Cirílico · Griego</span>
+    <div class="toc">
+      <h2>Índice</h2>
+      <ol>
+        <li><a href="#dirigido">¿A quién va dirigido 𝔻𝕁𝕊 🄺eyboard?</a></li>
+        <li><a href="#descripcion">Descripción completa de 𝔻𝕁𝕊 🄺eyboard</a></li>
+        <li><a href="#videos">Vídeos de demostración de 𝔻𝕁𝕊 🄺eyboard</a></li>
+        <li><a href="#privacidad">Política de privacidad</a></li>
+      </ol>
     </div>
 
-    <div class="section">
-      <h2>¿Qué es 𝔻𝕁𝕊 🄺eyboard?</h2>
-      <p>
-        𝔻𝕁𝕊 🄺eyboard es un teclado avanzado para Android pensado para quienes necesitan
-        velocidad, control, personalización y funciones que no existen en los teclados
-        tradicionales. Combina un diseño tipo PC con modo flotante, un modo burbuja
-        persistente y potentes herramientas integradas para mejorar cualquier flujo de trabajo.
-      </p>
+    <!-- 1) COMERCIAL -->
+    <div class="section" id="dirigido">
+      <h2>¿A quién va dirigido 𝔻𝕁𝕊 🄺eyboard?</h2>
+
+      <p>𝔻𝕁𝕊 🄺eyboard es para ti si buscas un teclado con productividad, diversión, privacidad y libertad de modo de uso.</p>
+
+      <div class="pillar p1">
+        <h3>PRODUCTIVIDAD</h3>
+        <div class="subline">👇 Por los siguientes motivos:</div>
+
+        <ul class="nice">
+          <li><span class="mark m-p1">🟩</span>Tiene herramientas útiles, conseguidas a través de la compra de addons 🧩 premium, tales como:</li>
+          <li>
+            <ul class="nice">
+              <li><span class="submark">👉</span>Notas 📝. Apunta notas rápidas, recordatorios, tareas pendientes y textos clave que quieres tener a mano.</li>
+              <li><span class="submark">👉</span>Paint 🎨, para hacer dibujos personalizados útiles o ediciones rápidas de imágenes que permiten una mejor comunicación.</li>
+              <li><span class="submark">👉</span>Draw🄺ey ╬. El usuario puede crear interfaces en modo texto, sorprendiendo por ejemplo con el envío de texto al estilo de ventanas o informes sin el uso de gráficos.</li>
+            </ul>
+          </li>
+
+          <li><span class="mark m-p1">🟩</span>No hay pérdidas de tiempo gracias a:</li>
+          <li>
+            <ul class="nice">
+              <li><span class="submark">👉</span>La disponibilidad de herramientas integradas en este teclado que no suelen estar disponibles en otros.</li>
+              <li><span class="submark">👉</span>Poder editar texto con un mejor control y precisión, sustituyendo el toque de los dedos sobre el contenido por el uso de las teclas de navegación y de SEL, así como atajos con la tecla CTRL.</li>
+              <li><span class="submark">👉</span>Poder acceder a más teclas que otros teclados desde un mismo panel gracias a las barras de scroll.</li>
+              <li><span class="submark">👉</span>Poder cambiar entre aplicaciones recientes sin tener que buscar en el launcher o en el carrusel del sistema de recientes.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pillar p2">
+        <h3>DIVERSIÓN</h3>
+        <div class="subline">👇 Gracias al uso de los addons 🧩 premium:</div>
+
+        <ul class="nice">
+          <li><span class="mark m-p2">🩷</span>Con Paint 🎨 el usuario puede hacer dibujos y enviarlos en sus aplicaciones de mensajería sin salir de su teclado, sorprendiendo a sus amigos.</li>
+          <li><span class="mark m-p2">🩷</span>Con Stickers 🖼 el usuario puede crear sus propios stickers y hacerse una colección, ya sean fotos estáticas o GIFS dinámicos.</li>
+          <li><span class="mark m-p2">🩷</span>Con Draw🄺ey ╬, además de interfaces en modo texto, se puede hacer arte ASCII y así dibujar “a lo retro”.</li>
+          <li><span class="mark m-p2">🩷</span>Con LockImage 🔒, el usuario puede disfrutar de su imagen o GIF favorito antes de iniciar cualquier conversación.</li>
+          <li><span class="mark m-p2">🩷</span>Además se puede usar una buena variedad de temas y cambiarlos al vuelo para que el usuario encuentre el look que más le satisfaga en cada momento.</li>
+        </ul>
+      </div>
+
+      <div class="pillar p3">
+        <h3>PRIVACIDAD</h3>
+        <div class="subline">👇 Por los siguientes motivos:</div>
+
+        <ul class="nice">
+          <li><span class="mark m-p3">🟦</span>No se envía ningún tipo de información de manera online a servidores: no se envían estadísticas de uso y, por supuesto, no se hace ningún envío de contenido tecleado por el usuario.</li>
+          <li><span class="mark m-p3">🟦</span>El usuario tiene el control de las palabras de su diccionario que puede hacerlo crecer y enseñarle a su manera, exportarlo e importarlo.</li>
+        </ul>
+      </div>
+
+      <div class="pillar p4">
+        <h3>LIBERTAD DE MODO DE USO</h3>
+        <div class="subline">👇 Por los siguientes motivos:</div>
+
+        <ul class="nice">
+          <li><span class="mark m-p4">🟨</span>El usuario puede usarlo de una manera clásica: acoplado en el fondo.</li>
+          <li><span class="mark m-p4">🟨</span>Lo puede hacer flotar en cualquier momento, con la rapidez de un simple tap sobre el banner.</li>
+          <li><span class="mark m-p4">🟨</span>A través del addon 🧩 premium Burbuja 🫧, el usuario puede desplegar y plegar su teclado y enviar teclas en cualquier app, al igual que puede hacer en un PC con un teclado físico.</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="section">
-      <h2>Tres modos: Acoplado, Flotante y Burbuja</h2>
+    <!-- 2) DESCRIPTIVO -->
+    <div class="section" id="descripcion">
+      <h2>Descripción completa de 𝔻𝕁𝕊 🄺eyboard</h2>
 
-      <h3>⭐ Modo acoplado</h3>
-      <p>El teclado IME clásico en la parte inferior de la pantalla.</p>
+      <p>𝔻𝕁𝕊 🄺eyboard — Teclado virtual para Android totalmente privado, de estilo PC, con modo flotante y persistencia.</p>
+      <p>𝔻𝕁𝕊 🄺eyboard es un nuevo teclado que:</p>
 
-      <h3>⭐ Modo flotante</h3>
-      <p>
-        Mueve y redimensiona el teclado libremente, similar a los modos flotantes de
-        teclados como Samsung, Gboard o Microsoft, pero con aún más control.
-      </p>
-
-      <h3>⭐ Modo burbuja (teclado persistente · <span class="highlight">premium</span>)</h3>
       <ul>
-        <li>El teclado se minimiza en una burbuja flotante siempre accesible.</li>
-        <li>Se expande automáticamente al tocar un campo de texto.</li>
-        <li>Permite escribir incluso cuando no hay un campo de entrada visible.</li>
-        <li>Ideal para webs, emuladores, juegos y interfaces “raras”.</li>
+        <li>
+          Tiene teclas propias de teclado físico de PC, tales como CTRL, ALT, F1 a F12, TAB, teclas de flecha, de avance y retroceso de página, y de inicio y fin de texto. Gracias a ellas el usuario puede mover el cursor y editar, sin necesidad de usar los dedos tocando directamente el contenido en pantalla.
+        </li>
+
+        <li>
+          Puede pasar rápidamente de modo acoplado a modo flotante y al revés, a través de un tap sobre el banner. Para ello tiene que activar el permiso de mostrar el teclado sobre otras aplicaciones.
+        </li>
+
+        <li>
+          Está enriquecido con addons 🧩, que son herramientas de productividad. Permiten al usuario realizar tareas sin salir del teclado. En su primera versión existen los siguientes:
+          <ul>
+            <li>Online 🔍. Acceso rápido a búsquedas online, vídeos y traducción a través de los navegadores que el usuario tenga instalados.</li>
+            <li>LockImage 🔒 (premium). Permite al usuario contemplar su imagen favorita, estática o dinámica, en el mismo teclado, antes de componer texto.</li>
+            <li>Notas 📝 (premium). Permite al usuario crear, guardar, importar o exportar notas sin salir de su teclado.</li>
+            <li>Stickers 🖼 (premium). Generación de stickers, estáticos o dinámicos, a través de las propias imágenes del usuario.</li>
+            <li>Paint 🎨 (premium). Programa básico para que el usuario pueda crear dibujos desde cero o sobre sus propias imágenes, sin salir de su teclado. Después puede guardarlos o compartirlos rápidamente en aplicaciones de mensajería.</li>
+            <li>Draw🄺ey ╬. Se trata de un panel de  teclado compuesto de caracteres box-drawing que permiten crear gráficos de texto, arte ASCII e interfaces de usuario en modo texto (ventanas, botones, menús, tablas, barras de progreso, etc.).</li>
+            <li>
+              Burbuja 🫧 (premium). Da persistencia, es decir, permite al usuario desplegar o plegar su teclado en cualquier momento. Al plegarse se convierte en un icono burbuja que el usuario puede dejar en cualquier parte de la pantalla para que no moleste.
+              <p>Esta característica acerca al usuario a la experiencia que tiene con su PC: el teclado está siempre presente y dispuesto para su uso, en cualquier app.</p>
+              <p>En la práctica la ventaja principal de este addon es que permite enviar teclas a aplicaciones sin campos de entrada. Muy útil para emuladores, tanto los que están online como instalados, en los que se necesita hacer aparecer el teclado.</p>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          Utiliza ventanas y barras con scroll para disponer de una mayor cantidad de teclas y texto, y acceder a ellos rápidamente deslizando la ventana:
+          <ul>
+            <li><strong>Barra local y de signos.</strong> Permite al usuario acceder a los signos propios de su idioma y a los signos más comúnmente usados para componer texto ( . , ; : ! ? ) sin salir del panel principal.</li>
+            <li>
+              <strong>Barra de modificadores y barra de navegación.</strong> La primera compuesta de la tecla CTRL, ALT  y SEL. La segunda compuesta de las teclas de flecha, avance y retroceso de página, inicio y fin de línea, tabulador y escape. La tecla SEL sirve de bloqueo de mayúsculas y de selección de texto. Con la tecla CTRL se pueden hacer atajos valiosos tales como copiar, cortar y pegar el texto seleccionado con SEL, seleccionar todo, deshacer, borrar palabras enteras y saltar el cursor directamente entre ellas.
+            </li>
+            <li><strong>Barra de paneles de teclado.</strong> En ella el usuario puede ir al panel de teclado de números y símbolos, volver al panel principal, ir al panel de emoticonos.</li>
+            <li><strong>Barra de aplicaciones recientes.</strong> Permite al usuario cambiar rápidamente entre las últimas aplicaciones que ha visitado. Gracias a ella el usuario puede, por ejemplo, estar escribiendo en alguna de sus aplicaciones de mensajería, saltar a consultar una información a su navegador o app de inteligencia artificial y volver al instante.</li>
+            <li><strong>Barra de ajustes ⚙️ y addons 🧩.</strong> Como dice el nombre, el usuario tiene acceso directo al panel de ajustes dentro de la app, al panel para comprar cualquiera de los addons premium disponibles y acceder a los mismos en esta misma barra una vez comprados.</li>
+          </ul>
+        </li>
+
+        <li>
+          Los ajustes ⚙️ se encuentran dentro del teclado, sin necesidad de abrir pantallas externas de configuración, y desde ahí tienes botones on/of, activar o desactivar, para lo siguiente:
+          <ul>
+            <li>El arrastre y el redimensionamiento del teclado.</li>
+            <li>Las automayúsculas de la primera letra al comienzo de frase e insertar espacio tras símbolo de fin de frase.</li>
+            <li>Sonido y vibración al pulsar teclas.</li>
+            <li>Sugerencias, aprendizaje y autocorrección de palabras.</li>
+          </ul>
+        </li>
+
+        <li>
+          Existen ocho temas que cambian los estilos y colores de teclas, bordes y fondo del teclado. Puedes acceder a ellos rápidamente desde los ajustes, dentro del propio teclado. Los temas cambian también el aspecto del logotipo de la aplicación, tanto del banner como del icono burbuja flotante.
+        </li>
+
+        <li>
+          𝔻𝕁𝕊 🄺eyboard ofrece 100% de privacidad al usuario:
+          <ul>
+            <li>El contenido tecleado nunca es enviado a servidores en la nube.</li>
+            <li>
+              Únicamente se conecta online en los siguientes casos:
+              <ul>
+                <li>Si el usuario activa el dictado por voz, cuyo servicio lo proporcionan otras aplicaciones del teléfono.</li>
+                <li>Cuando el usuario compra un addon 🧩 premium y para comprobar que el addon ha sido legalmente comprado.</li>
+              </ul>
+            </li>
+            <li>Las palabras se almacenan, de forma voluntaria, en un diccionario completamente offline que es accesible desde los ajustes.</li>
+            <li>Tras la instalación, el teclado incluye un diccionario previo para cada uno de los ocho idiomas disponibles. Se tratan de diccionarios básicos, de aproximadamente unas 1000 palabras.</li>
+            <li>El usuario puede ampliar su diccionario libremente en su propio uso. Puede exportarlo o importar, en cualquier momento, otro editado por él mismo.</li>
+          </ul>
+        </li>
       </ul>
     </div>
 
-    <div class="section">
-      <h2>Teclado completo estilo PC</h2>
-      <p>Incluye teclas que casi ningún teclado moderno ofrece:</p>
+    <!-- 3) VÍDEOS -->
+    <div class="section" id="videos">
+      <h2>Vídeos de demostración de 𝔻𝕁𝕊 🄺eyboard</h2>
+
       <ul>
-        <li>Teclas de función <strong>F1–F12</strong></li>
-        <li><strong>Ctrl</strong>, <strong>Alt</strong>, <strong>Tab</strong>, <strong>Esc</strong></li>
-        <li><strong>Inicio</strong>, <strong>Fin</strong>, <strong>Supr</strong>, <strong>Insert</strong></li>
-        <li>Flechas completas para navegación precisa</li>
-      </ul>
-      <p>Perfecto para productividad, accesibilidad y usuarios avanzados.</p>
-    </div>
-
-    <div class="section">
-      <h2>Acceso rápido a apps y filas inteligentes</h2>
-
-      <h3>🔹 Últimas apps</h3>
-      <p>Abre tus aplicaciones recientes directamente desde el teclado.</p>
-
-      <h3>🔹 Barras horizontales con scroll interno</h3>
-      <p>Una innovación exclusiva:</p>
-      <ul>
-        <li>Filas de símbolos que se desplazan horizontalmente dentro del teclado.</li>
-        <li>Sin cambiar de modo ni abrir paneles adicionales.</li>
-        <li>Caracteres específicos por idioma (por ejemplo, <strong>ñ</strong>, <strong>ü</strong> y tildes en español).</li>
+        <li>🎥 Vídeo demostración de edición rápida con teclas de navegación, SEL y CTRL — <span class="linkph">[LINK]</span></li>
+        <li>🎥 Vídeo demostración de cambio acoplado ↔ flotante con tap en el banner — <span class="linkph">[LINK]</span></li>
+        <li>🎥 Vídeo demostración de Burbuja 🫧: desplegar/plegar y enviar teclas en cualquier app — <span class="linkph">[LINK]</span></li>
+        <li>🎥 Vídeo demostración de barra de aplicaciones recientes — <span class="linkph">[LINK]</span></li>
+        <li>🎥 Vídeo demostración de Paint 🎨 — <span class="linkph">[LINK]</span></li>
+        <li>🎥 Vídeo demostración de Stickers 🖼 — <span class="linkph">[LINK]</span></li>
+        <li>🎥 Vídeo demostración de Draw🄺ey ╬ — <span class="linkph">[LINK]</span></li>
+        <li>🎥 Vídeo demostración de LockImage 🔒 — <span class="linkph">[LINK]</span></li>
+        <li>🎥 Vídeo demostración de Notas 📝 — <span class="linkph">[LINK]</span></li>
       </ul>
     </div>
 
-    <div class="section">
-      <h2>Soporte multi-alfabeto</h2>
-      <p>Compatible con:</p>
-      <ul>
-        <li>Alfabeto latino</li>
-        <li>Alfabeto cirílico</li>
-        <li>Alfabeto griego</li>
-      </ul>
-      <p>Elige tu idioma y obtén sus símbolos y disposición automáticamente.</p>
-    </div>
-
-    <div class="section">
-      <h2>Opciones integradas y redimensionamiento</h2>
-      <ul>
-        <li>Muchas opciones se pueden cambiar desde el propio teclado.</li>
-        <li>Ajusta la altura y el tamaño del teclado a tu gusto.</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>100% offline y centrado en la privacidad</h2>
-      <ul>
-        <li>No envía tus pulsaciones a ningún servidor.</li>
-        <li>Funciona completamente sin conexión a Internet.</li>
-        <li>Sugerencias y autocorrección suaves basadas en tu propio diccionario <code>.txt</code> local.</li>
-        <li>El diccionario empieza vacío y lo construyes tú con tu uso.</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Sombrero: la barra de módulos (addons)</h2>
-      <p>
-        “Sombrero” es una zona extra encima de las sugerencias (como si el teclado fuera más alto)
-        que ofrece herramientas adicionales, muchas de ellas premium:
-      </p>
-      <ul>
-        <li><strong>Búsqueda directa</strong>: lanza búsquedas en la web o YouTube al instante.</li>
-        <li><strong>Bloc de notas</strong>: escribe notas rápidas sin salir de la app actual.</li>
-        <li><strong>Launcher</strong>: abre tus apps directamente desde el teclado.</li>
-        <li><strong>Trackpad</strong>: controla el cursor con suavidad y precisión.</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>¿Para quién es 𝔻𝕁𝕊 🄺eyboard?</h2>
-      <ul>
-        <li>Usuarios que escriben mucho y quieren más control.</li>
-        <li>Programadores y usuarios técnicos que echan de menos teclas de PC.</li>
-        <li>Personas que usan varias apps a la vez y quieren accesos rápidos.</li>
-        <li>Quien busque algo más que un teclado básico de móvil.</li>
-      </ul>
+    <!-- 4) PRIVACIDAD -->
+    <div class="section" id="privacidad">
+      <h2>Política de privacidad</h2>
+      <p>Política completa (HTML existente): <span class="linkph">[LINK A privacy_es.html]</span></p>
     </div>
 
     <p class="footnote">
-      Nota: Algunas funciones (como el modo burbuja y ciertos módulos de “Sombrero”)
-      están disponibles como contenido premium mediante compras integradas en Google Play.
+      Nota: Algunas funciones están disponibles como contenido premium mediante compras integradas.
     </p>
+
   </div>
 </body>
 </html>
