@@ -314,7 +314,7 @@ text-align:center;padding-left:0.4em;padding-right:0.4em;line-height:0.5em}
 .panel-preview{
   width: 408px;
   height: 298px;
-  background-image: url("themesnew.png");
+  background-image: url("images/themesnew.png");
   background-position: 0 0;
   background-size: auto;
   border-radius: 14px;
@@ -325,7 +325,7 @@ text-align:center;padding-left:0.4em;padding-right:0.4em;line-height:0.5em}
   height: 150px;
   overflow: hidden;
 
-  background: url("themesnew.png") no-repeat;
+  background: url("images/themesnew.png") no-repeat;
   background-size: 408px 596px;
 
   border-radius: 14px;
@@ -350,7 +350,7 @@ text-align:center;padding-left:0.4em;padding-right:0.4em;line-height:0.5em}
   height: 150px;
   overflow: hidden;
 
-  background: url("themesnewNum.png") no-repeat;
+  background: url("images/themesnewNum.png") no-repeat;
   background-size: 408px 596px;
 
   border-radius: 14px;
