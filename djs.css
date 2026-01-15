@@ -50,8 +50,11 @@ body{
   line-height:1.65;
 }
 
-a{ color: inherit; text-decoration:none; }
+a{ color: inherit; text-decoration:none;}
+
 a:hover{ opacity:.92; }
+
+
 
 img{ max-width:100%; display:block; }
 
@@ -337,7 +340,19 @@ text-align:center;padding-left:0.4em;padding-right:0.4em;line-height:0.5em}
   height: 180px;    /* 179 + 1 de seguridad */
   overflow: hidden;
 
-  background: url("themesnew.png") no-repeat;
+  background: url("images/themesnewNum.png") no-repeat;
+  background-size: 490px 716px;
+
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 14px 30px rgba(0,0,0,.35);
+}
+.panelNumMini60-preview{
+  width: 246px;     /* 245 + 1 de seguridad */
+  height: 180px;    /* 179 + 1 de seguridad */
+  overflow: hidden;
+
+  background: url("images/themesnew.png") no-repeat;
   background-size: 490px 716px;
 
   border-radius: 14px;
@@ -350,7 +365,7 @@ text-align:center;padding-left:0.4em;padding-right:0.4em;line-height:0.5em}
   height: 150px;
   overflow: hidden;
 
-  background: url("images/themesnewNum.png") no-repeat;
+  background: url("themesnewNum.png") no-repeat;
   background-size: 408px 596px;
 
   border-radius: 14px;
@@ -438,6 +453,7 @@ text-align:center;padding-left:0.4em;padding-right:0.4em;line-height:0.5em}
   border-radius: 18px;
   padding: 14px 14px 12px;
   overflow:hidden;
+  padding-bottom:3.4em;
 }
 .pillar::before{
   content:"";
@@ -485,7 +501,12 @@ text-align:center;padding-left:0.4em;padding-right:0.4em;line-height:0.5em}
   background: rgba(255,255,255,.03);
   border-radius: 18px;
   padding: 14px;
+  position:relative;
+  padding-bottom:3.4em;
 }
+.card a{ color: inherit; text-decoration:none; border:2px solid white;border-radius:20%;padding:0.4em;}
+.pillar a{ color: inherit; text-decoration:none; border:2px solid white;border-radius:20%;padding:0.4em;}
+
 .grid{
   display:grid;
   grid-template-columns: 1fr;
