@@ -467,6 +467,21 @@ text-align:center;padding-left:0.4em;padding-right:0.4em;line-height:0.5em}
   font-size: 1.02rem;
   letter-spacing:.25px;
 }
+/* Títulos de pilares: centrados, grandes y con color propio */
+.pillar h3{
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  margin: 0 0 10px;
+}
+
+/* Color según pilar */
+.pillar.p1 h3{ color: var(--p1); }
+.pillar.p2 h3{ color: var(--p2); }
+.pillar.p3 h3{ color: var(--p3); }
+.pillar.p4 h3{ color: var(--p4); }
+
 .subline{
   display:inline-block;
   font-size:.90rem;
