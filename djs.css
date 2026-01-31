@@ -671,6 +671,13 @@ li{ margin: .25rem 0; color: rgba(238,242,255,.88); }
   border-radius: 14px;
 }
 
+.seo-h1{
+  position:absolute;
+  left:-9999px;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
 
 /* Scroll-margin */
 #dirigido, #descripcion, #videos, #privacidad{ scroll-margin-top: 18px; }
