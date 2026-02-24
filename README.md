@@ -1,4 +1,4 @@
-# DJS Key — Android PC-Style Keyboard with Floating Mode
+# DJS Key — Virtual PC Keyboard with Addons for Android.
 
 **DJS Key** is an **Android PC-style keyboard** designed for users who want real desktop keyboard behavior on phones and tablets.
 
@@ -8,20 +8,20 @@ It includes **CTRL, ALT, arrow keys and function keys**, supports **floating mod
 
 ## 🔑 Key features
 
-- ⌨️ **PC-style keyboard for Android**
+- ⌨️ **Virtual PC Keyboard for Android**
   - CTRL, ALT, arrows, TAB, ESC, F1–F12
   - Precise cursor movement and text editing
 
-- 🫧 **Floating keyboard & persistence**
+- 🫧 **Floating keyboard & Bubble Mode (always-available keyboard) **
   - Docked or floating mode
-  - Optional persistence via the Bubble addon
+  - Optional always-available keyboard via the Bubble addon
   - Send keys even in apps with no input fields
 
 - 🧩 **Addons system**
   - Productivity and creativity tools inside the keyboard
-  - Notes 📝, Paint 🎨, Stickers 🖼, Draw🄺ey ╬, LockImage 🔒, Online 🔍
+  - Notes 📝, Fonts 🄵, Paint 🎨, Stickers 🖼, Draw🄺ey ╬, LockImage 🔒, Online 🔍, Wing 🪽
 
-- 🔒 **100% privacy**
+- 🔒 **100% Privacy**
   - No telemetry
   - No data collection
   - Typed content is never sent to servers
@@ -42,7 +42,7 @@ Full description of **DJS Key**, screenshots, demos, addons, and detailed privac
 
 👉 https://play.google.com/store/apps/details?id=com.djs.keyboard
 
-Download **DJS Key**, the **Android floating keyboard with PC-style keys**, directly from Google Play.
+Download **DJS Key**, the **Virtual PC Keyboard with Addons for Android**, directly from Google Play.
 
 ---
 
@@ -72,11 +72,13 @@ DJS Key includes an extensible addons system:
 
 - **Bubble 🫧 (premium)** — keyboard persistence and folding
 - **Notes 📝 (premium)** — create and manage notes inside the keyboard
+- **Fonts 🄵 (premium)**
 - **Paint 🎨 (premium)** — draw and edit images without leaving the keyboard
 - **Stickers 🖼 (premium)** — create static or animated stickers
 - **Draw🄺ey ╬** — ASCII art and text-mode interfaces
 - **LockImage 🔒 (premium)** — display a favorite image or GIF before typing
 - **Online 🔍** — quick web search and translation
+- **Wing 🪽**
 
 ---
 
