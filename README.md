@@ -70,15 +70,16 @@ It is especially useful for:
 
 DJS Key includes an extensible addons system:
 
-- **Bubble 🫧 (premium)** — keyboard persistence and folding
-- **Notes 📝 (premium)** — create and manage notes inside the keyboard
-- **Fonts 🄵 (premium)**
-- **Paint 🎨 (premium)** — draw and edit images without leaving the keyboard
-- **Stickers 🖼 (premium)** — create static or animated stickers
-- **Draw🄺ey ╬** — ASCII art and text-mode interfaces
-- **LockImage 🔒 (premium)** — display a favorite image or GIF before typing
+- **Bubble 🫧 [ Premium ]** — keyboard persistence and folding
+- **Notes 📝 [ Premium ]** — create and manage notes inside the keyboard
+- **Fonts 🄵 [ Premium ]**
+- **Paint 🎨 [ Premium ]** — draw and edit images without leaving the keyboard
+- **Stickers 🖼 [ Premium ]** — create static or animated stickers
+- **Draw🄺ey ╬ [ Premium ]** — ASCII art and text-mode interfaces
+- **Portal 🌀 [ Free (limited) & Premium ]** — display a favorite image or GIF before typing
 - **Online 🔍** — quick web search and translation
-- **Wing 🪽**
+- **Wing 🪽 [ Premium ]**
+- **Agenda 📅 [ Free ]**
 
 ---
 
@@ -101,4 +102,4 @@ You can read the full privacy policy on the official website.
 Created by **Diego Jurado Seguí (DJS)**
 
 Community and support:
-- 💬 Discord: https://discord.gg/g2wD2bEK
+- 💬 Discord: https://discord.gg/TSBZu7AkaT
