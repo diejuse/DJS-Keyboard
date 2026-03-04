@@ -4,7 +4,14 @@
 
 It includes **CTRL, ALT, arrow keys and function keys**, supports **floating mode**, and offers **addons** for productivity and creativity — all with **100% privacy and no telemetry**.
 
----
+## 🏛️ Philosophy. Based on 4 pillars
+
+**DJS Key** is built on four core pillars:
+
+- 🟩 **Productivity** — Real PC keys (CTRL, ALT, arrows, function keys) and tools to edit text precisely and faster.
+- 🩷 **Fun** — Creative addons (Fonts 🄵, Paint 🎨, Stickers 🖼, Draw🄺ey ╬, LockImage 🔒) to make messaging and content more expressive.
+- 🟨 **Freedom of Use** — Docked mode, Floating mode, and Bubble Mode 🫧 (always-available keyboard) to use the keyboard your way.
+- 🟦 **Privacy** — 100% private by design: no telemetry, no external servers, and typed content is never sent online.
 
 ## 🔑 Key features
 
@@ -12,14 +19,14 @@ It includes **CTRL, ALT, arrow keys and function keys**, supports **floating mod
   - CTRL, ALT, arrows, TAB, ESC, F1–F12
   - Precise cursor movement and text editing
 
-- 🫧 **Floating keyboard & Bubble Mode (always-available keyboard) **
+- 🧩 **Addons**
+  - Productivity and creativity tools inside the keyboard
+  - Notes 📝, Fonts 🄵, Paint 🎨, Stickers 🖼, Draw🄺ey ╬, LockImage 🔒, Online 🔍, Wing 🪽
+
+- 🫧 **Floating keyboard & Bubble Mode (always-available keyboard)**
   - Docked or floating mode
   - Optional always-available keyboard via the Bubble addon
   - Send keys even in apps with no input fields
-
-- 🧩 **Addons system**
-  - Productivity and creativity tools inside the keyboard
-  - Notes 📝, Fonts 🄵, Paint 🎨, Stickers 🖼, Draw🄺ey ╬, LockImage 🔒, Online 🔍, Wing 🪽
 
 - 🔒 **100% Privacy**
   - No telemetry
