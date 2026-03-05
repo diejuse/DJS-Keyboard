@@ -749,3 +749,57 @@ li{ margin: .25rem 0; color: rgba(238,242,255,.88); }
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================
+ *  Mobile: más ancho útil
+ *  ========================= */
+@media (max-width: 520px){
+
+  /* 1) Contenedor principal: menos margen lateral */
+  .wrap{ padding-left: 6px; padding-right: 6px; }
+
+
+  /* 2) HERO: menos padding interno y menos “sangrado” */
+  .hero-inner{
+    padding: 12px;
+    gap: 12px;
+  }
+  .hero-left,
+  .hero-right{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .hero-layouts{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* 3) Secciones: menos padding para aprovechar ancho */
+  .section{
+    padding: 14px 12px;
+    border-radius: 18px; /* opcional: un poco menos para que “llene” más */
+  }
+
+  /* 4) Bloques internos (cards/toc/pillars/banners): recorta padding */
+  .card,
+  .pillar,
+  .toc,
+  .big-banner{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* 5) Quita limitadores que estrechan */
+  .tagline{
+    max-width: none; /* en móvil, que ocupe todo */
+  }
+  .layout-item{
+    max-width: none;
+    margin: 0;
+  }
+
+  /* 6) Extra opcional: botones/flags un pelín más compactos */
+  .flags a{
+    padding: 6px 8px;
+  }
+}
