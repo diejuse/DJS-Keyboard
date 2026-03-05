@@ -173,6 +173,7 @@ img{ max-width:100%; display:block; }
 .createdby{
   font-size: 0.9rem;
   font-weight: 650;
+  padding-left:3rem;
   color: var(--muted);
   white-space: nowrap;
 }
@@ -191,6 +192,18 @@ img{ max-width:100%; display:block; }
   font-weight: 820;
 
 }
+.micro-claim{
+  margin: -14px 0 14px;
+  color: rgba(238,242,255,.90);
+  font-size: 1.05rem;
+  line-height: 1.35;
+  max-width: 62ch;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+}
+
 .tagline{
   margin:0;
   padding-top:1rem;
